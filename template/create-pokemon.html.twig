@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+    {% block content %}
+        <h1>Create a Pokemon</h1>
+
+        <form method="post">
+            <label for="name">Name</label>
+            <input type="text" name="name" placeholder="Name">
+
+            <select name="type">
+                <option value="fire">Type Fire</option>
+                <option value="plant">Type Plant</option>
+                <option value="water">Type Water</option>
+            </select>
+
+            <button name="submit">Submit</button>
+        </form>
+    {% endblock %}

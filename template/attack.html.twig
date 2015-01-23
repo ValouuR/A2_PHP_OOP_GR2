@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+    {% block content %}
+        <h1>{{ my_pokemon.name }} VS {{ his_pokemon.name }}</h1>
+
+        {% if (attack_error) != null %}
+        <div class="alert alert-danger" role="alert">
+            <p>{{ attack_error }}</p>
+        </div>
+        {% endif %}
+
+        <div class="row">
+            <div class="col-md-6">
+                <p>HP : {{ my_pokemon.hp }}</p>
+            </div>
+            <div class="col-md-6">
+                <p>HP : {{ his_pokemon.hp }}</p>
+            </div>
+        </div>
+
+        <a href="all-pokemon.php">Go back to Pokemon list</a>
+        <br>
+        <a href="my-pokemon.php">Go back to my Pokemon</a>
+
+    {% endblock %}
+

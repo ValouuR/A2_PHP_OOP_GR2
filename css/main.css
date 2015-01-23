@@ -1,0 +1,25 @@
+h1{
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.link_a{
+    display: block;
+    margin-top: 5px;
+}
+
+.link_margin{
+    margin-top: 20px;
+}
+
+li{
+    list-style-type: none;
+}
+
+.cadre_attack{
+    margin-bottom: 40px;
+}
+
+.btn_attack{
+    text-align: center;
+}

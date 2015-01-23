@@ -1,0 +1,26 @@
+{
+    "name": "Valentine R/a2_php_oop_gr2",
+    "require": {
+        "twig/twig":         "1.16.*",
+        "cocur/slugify":     "~1.0",
+        "doctrine/dbal":     "~2.5",
+        "doctrine/orm":      "~2.4",
+        "symfony/console":   "~2.6",
+        "twitter/bootstrap": "~3.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Valentine Rogen",
+            "email": "valentinerogen@yahoo.fr"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "ValouuR\\": "src"
+        }
+    },
+    "config": {
+        "bin-dir": "bin"
+    }
+}

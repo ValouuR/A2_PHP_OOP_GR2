@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+    {% block content %}
+        <h1>Choose a Pokemon to attack</h1>
+
+        <div class="row">
+        {% for pokemon in pokemon %}
+            {% if pokemon != my_pokemon %}
+            <div class="col-md-3 cadre_attack">
+                <ul>
+                    <li>Name : {{ pokemon.name }}</li>
+                    <li>Type :
+                        {% if pokemon.type == 0 %}
+                            Fire
+                        {% elseif pokemon.type == 1 %}
+                            Plant
+                        {% else %}
+                            Water
+                        {% endif %}
+                    </li>
+                    <li>HP :
+                        {% if pokemon.hp > 70 %}
+                            <span class="label label-success">{{ pokemon.hp }}</span>
+                        {% elseif pokemon.hp > 40 %}
+                            <span class="label label-warning">{{ pokemon.hp }}</span>
+                        {% else %}
+                            <span class="label label-danger">{{ pokemon.hp }}</span>
+                        {% endif %}
+                    </li>
+                    <li>Trainer : {{ pokemon.trainer.username }}</li>
+                </ul>
+
+                <div class="btn_attack">
+                    <a href="attack.php?id={{ pokemon.id }}" class="btn btn-xs btn-default">Attack</a>
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+        </div>
+
+        <a href="my-pokemon.php" class="link_a link_margin">Go back to my Pokemon</a>
+    {% endblock %}
