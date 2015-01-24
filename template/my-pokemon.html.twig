@@ -2,9 +2,13 @@
     {% block content %}
         <h1>My Pokemon</h1>
 
-        {% if (attack_error) != null %}
+        {% if (attack_error) != null and attack_error == 'fail'%}
             <div class="alert alert-danger" role="alert">
-                <p>{{ attack_error }}</p>
+                <p>You can only resuscitate you Pokemon once a day.</p>
+            </div>
+        {% elseif (attack_error) != null and attack_error == 'success'%}
+            <div class="alert alert-success" role="alert">
+                <p>Your Pokemon has been resuscitated ! :)</p>
             </div>
         {% endif %}
 
@@ -35,5 +39,7 @@
 
         {% if pokemon.hp == 0 %}
             <a href="resuscitate.php" class="link_a">Resuscitate my Pokemon</a>
+        {% else %}
+            <p>Resuscitate my Pokemon</p>
         {% endif %}
     {% endblock %}

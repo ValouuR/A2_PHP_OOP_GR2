@@ -19,6 +19,12 @@ if (isset($_POST['submit'])) {
 
     $em->flush();
 
+    $trainerRepo = $em->getRepository('ValouuR\PokemonBattle\Model\Trainer');
+
+    /** @var Trainer $trainer */
+    $trainer = $trainerRepo->findOneBy(['username' => $_POST['username']]);
+
+    $_SESSION['id'] = $trainer->getId();
     header('Location: create-pokemon.php');
 }
 

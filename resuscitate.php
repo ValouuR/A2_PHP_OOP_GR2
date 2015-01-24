@@ -15,7 +15,6 @@ $myPokemon = $pokemonRepository->findOneBy([
 ]);
 
 const REZ_COOLDOWN = 24;
-$attackError = null;
 
 $lastResuscitate = $myPokemon->getLastResuscitate();
 
@@ -36,12 +35,8 @@ if($totalSecondsNumber > REZ_COOLDOWN * 3600) {
     ;
 
     $em->flush();
+    header('Location: my-pokemon.php?resuscitate=success');
 
-    header('Location: my-pokemon.php');
-} else {
-    $attackError = ('Votre Pokemon ne peut ressusciter qu\'une seule fois par jour.');
 }
-
-echo $twig ->render('my-pokemon.html.twig', [
-    'attack_error' => $attackError,
-]);
+else
+    header('Location: my-pokemon.php?resuscitate=fail');

@@ -30,7 +30,11 @@
                 </ul>
 
                 <div class="btn_attack">
-                    <a href="attack.php?id={{ pokemon.id }}" class="btn btn-xs btn-default">Attack</a>
+                    {% if pokemon.hp != 0 %}
+                        <a href="attack.php?id={{ pokemon.id }}" class="btn btn-xs btn-default">Attack</a>
+                    {% else %}
+                        <p class="label label-default">Attack</p>
+                    {% endif %}
                 </div>
             </div>
             {% endif %}

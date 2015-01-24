@@ -20,6 +20,8 @@ if (isset($_POST['submit'])) {
         ->setHP(100)
         ->setName($_POST['name'])
         ->setTrainer($trainer)
+        ->setLastAttack(new DateTime("2012-07-08 11:14:15.638276"))
+        ->setLastResuscitate(new DateTime("2012-07-08 11:14:15.638276"))
     ;
 
     if ($_POST['type'] == "fire") {

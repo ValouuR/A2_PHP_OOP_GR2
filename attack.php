@@ -48,7 +48,7 @@ if($totalSecondsNumber > ATTACK_COOLDOWN * 3600) {
 
     $em->flush();
 } else {
-    $attackError = ('Votre Pokemon ne peut attaquer qu\'une seule fois toutes les 6 heures.');
+    $attackError = ('Your Pokemon can only attack once every 6 hours.');
 }
 
 echo $twig ->render('attack.html.twig', [
